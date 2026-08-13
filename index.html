@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ciribelly Alice — Product</title>
+<meta name="description" content="Product Owner en Madrid. Trayectoria de la operación a la gestión ágil de producto — co-fundadora de Ammura, marca de e-commerce real construida de principio a fin.">
+<meta property="og:title" content="Ciribelly Alice — Product Owner">
+<meta property="og:description" content="De la idea al lanzamiento: producto, datos y ejecución. Co-fundadora de Ammura.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23191E23'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Arial' font-weight='800' fill='%233E6259' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -183,6 +189,7 @@
   .ammura-media{display:grid; grid-template-columns:1.1fr 1fr; gap:14px; margin:26px 0;}
   @media (max-width:640px){ .ammura-media{grid-template-columns:1fr;} }
   .ammura-media img{width:100%; height:100%; object-fit:cover; border-radius:4px; display:block; max-height:230px;}
+  .ammura-media > div{display:flex; flex-direction:column;}
   .ammura-links{display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;}
   .ammura-links a{
     font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--white); text-decoration:none;
@@ -233,6 +240,40 @@
   [data-lang-content]{display:none;}
   [data-lang-content].active{display:block;}
   span[data-lang-content].active{display:inline;}
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* ===== MICRO-INTERACTIONS ===== */
+  .release{transition:transform 0.25s ease;}
+  .release:hover{transform:translateX(4px);}
+  .ammura-stat{transition:transform 0.2s ease, background 0.2s ease;}
+  .ammura-stat:hover{transform:translateY(-3px); background:rgba(255,255,255,0.09);}
+  .toolkit-col{transition:background 0.2s ease;}
+  .toolkit-col:hover{background:var(--white);}
+  .exp-item{transition:padding-left 0.2s ease;}
+  .exp-item:hover{padding-left:6px;}
+  .lang-item{transition:transform 0.2s ease, box-shadow 0.2s ease;}
+  .lang-item:hover{transform:translateY(-3px); box-shadow:0 6px 18px rgba(25,30,35,0.08);}
+  .btn{transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;}
+  .btn:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(25,30,35,0.15);}
+  .avatar{transition:transform 0.3s ease;}
+  .avatar:hover{transform:scale(1.04);}
+
+  /* ===== AUTHENTIC BADGE ===== */
+  .authentic-badge{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'IBM Plex Mono'; font-size:10.5px; text-transform:uppercase; letter-spacing:0.05em;
+    color:#9FB8AE; margin-bottom:10px;
+  }
+  .authentic-badge::before{content:'●'; font-size:8px; color:#7FA294;}
+  .media-caption{
+    font-family:'IBM Plex Mono'; font-size:10.5px; color:#9C9F96; margin-top:6px; line-height:1.5;
+  }
 </style>
 </head>
 <body>
@@ -277,7 +318,7 @@
   </div>
 </header>
 
-<section id="journey" class="wrap">
+<section id="journey" class="wrap reveal">
   <div class="section-eyebrow" data-lang-content-group data-key="ev_journey">Trayectoria</div>
   <h2 data-lang-content-group data-key="journey_h2">Cada etapa fue un paso deliberado hacia Producto.</h2>
 
@@ -326,7 +367,7 @@
   </div>
 </section>
 
-<section id="ammura" class="wrap">
+<section id="ammura" class="wrap reveal">
   <div class="section-eyebrow" data-lang-content-group data-key="ev_case">Caso destacado</div>
   <div class="ammura-card">
     <div class="ammura-top">
@@ -345,18 +386,25 @@
       <div class="ammura-stat"><div class="num">1</div><div class="label" data-lang-content-group data-key="am_stat2">Viaje a fábrica, Shenzhen</div></div>
       <div class="ammura-stat"><div class="num">100%</div><div class="label" data-lang-content-group data-key="am_stat3">Packaging reciclable</div></div>
     </div>
+    <div class="authentic-badge" data-lang-content-group data-key="am_authentic">Fotos reales del proceso — no stock</div>
     <div class="ammura-media">
-      <img src="assets/cartao-mao.png" alt="Cartón de agradecimiento Ammura en producción">
-      <img src="assets/cartao-1.png" alt="Diseño del cartón de agradecimiento Ammura">
+      <div>
+        <img src="assets/cartao-mao.png" alt="Control de calidad en fábrica, Ammura">
+        <div class="media-caption" data-lang-content-group data-key="am_cap1">Control de calidad — pieza recién salida de producción en fábrica.</div>
+      </div>
+      <div>
+        <img src="assets/cartao-1.png" alt="Diseño del cartón de agradecimiento Ammura">
+        <div class="media-caption" data-lang-content-group data-key="am_cap2">Cartón de agradecimiento — diseño propio, grabado láser en bambú.</div>
+      </div>
     </div>
     <div class="ammura-links">
-      <a href="https://ammurahome.com" target="_blank" data-lang-content-group data-key="am_link1">ammurahome.com ↗</a>
+      <a href="https://ammurahome.com" target="_blank" class="btn btn-primary" style="background:var(--white); color:var(--ink); border-color:var(--white);" data-lang-content-group data-key="am_link1">Ver tienda en vivo ↗</a>
       <a href="#contact" data-lang-content-group data-key="am_link2">Solicitar el case completo (PDF) ↗</a>
     </div>
   </div>
 </section>
 
-<section id="toolkit" class="wrap">
+<section id="toolkit" class="wrap reveal">
   <div class="section-eyebrow" data-lang-content-group data-key="ev_toolkit">Toolkit</div>
   <h2 data-lang-content-group data-key="toolkit_h2">Lo que uso para llevar una idea hasta producción.</h2>
   <div class="toolkit-grid">
@@ -390,7 +438,7 @@
   </div>
 </section>
 
-<section id="experience" class="wrap">
+<section id="experience" class="wrap reveal">
   <div class="section-eyebrow" data-lang-content-group data-key="ev_exp">Experiencia</div>
   <h2 data-lang-content-group data-key="exp_h2">Trayectoria profesional completa.</h2>
 
@@ -428,7 +476,7 @@
   </div>
 </section>
 
-<section id="languages" class="wrap">
+<section id="languages" class="wrap reveal">
   <div class="section-eyebrow" data-lang-content-group data-key="ev_lang">Idiomas</div>
   <div class="lang-grid">
     <div class="lang-item">
@@ -480,7 +528,8 @@ const dict = {
     ev_case:"Caso destacado", am_tagline:"Accesorios de bambú para el escritorio", am_status:"Fase de pre-lanzamiento",
     am_p1:"Co-fundé Ammura junto a mi socio, liderando todo el desarrollo de producto y marca: investigación de mercado, sourcing y desarrollo en fábricas de China (incluida una visita a Shenzhen), diseño de tienda con código personalizado, fotografía, Brand Voice y experiencia de unboxing.",
     am_stat1:"Productos físicos", am_stat2:"Viaje a fábrica, Shenzhen", am_stat3:"Packaging reciclable",
-    am_link1:"ammurahome.com ↗", am_link2:"Solicitar el case completo (PDF) ↗",
+    am_authentic:"Fotos reales del proceso — no stock", am_cap1:"Control de calidad — pieza recién salida de producción en fábrica.", am_cap2:"Cartón de agradecimiento — diseño propio, grabado láser en bambú.",
+    am_link1:"Ver tienda en vivo ↗", am_link2:"Solicitar el case completo (PDF) ↗",
     ev_toolkit:"Toolkit", toolkit_h2:"Lo que uso para llevar una idea hasta producción.",
     tk_cat1:"Producto", tk1_2:"Roadmap & Backlog", tk1_3:"Descubrimiento de producto",
     tk_cat2:"Datos & Técnico", tk2_2:"Análisis de datos",
@@ -509,7 +558,8 @@ const dict = {
     ev_case:"Case em destaque", am_tagline:"Acessórios de bambu para o escritório", am_status:"Fase de pré-lançamento",
     am_p1:"Co-fundei a Ammura junto ao meu sócio, liderando todo o desenvolvimento de produto e marca: pesquisa de mercado, sourcing e desenvolvimento em fábricas na China (incluindo uma visita a Shenzhen), design da loja com código personalizado, fotografia, Brand Voice e experiência de unboxing.",
     am_stat1:"Produtos físicos", am_stat2:"Viagem à fábrica, Shenzhen", am_stat3:"Embalagem reciclável",
-    am_link1:"ammurahome.com ↗", am_link2:"Solicitar o case completo (PDF) ↗",
+    am_authentic:"Fotos reais do processo — não são stock", am_cap1:"Controle de qualidade — peça recém-saída de produção na fábrica.", am_cap2:"Cartão de agradecimento — design próprio, gravado a laser em bambu.",
+    am_link1:"Ver loja ao vivo ↗", am_link2:"Solicitar o case completo (PDF) ↗",
     ev_toolkit:"Toolkit", toolkit_h2:"O que eu uso para levar uma ideia até a produção.",
     tk_cat1:"Produto", tk1_2:"Roadmap & Backlog", tk1_3:"Product Discovery",
     tk_cat2:"Dados & Técnico", tk2_2:"Análise de dados",
@@ -538,7 +588,8 @@ const dict = {
     ev_case:"Featured case", am_tagline:"Bamboo accessories for the desk", am_status:"Pre-launch stage",
     am_p1:"I co-founded Ammura with my partner, leading all product and brand development: market research, sourcing and manufacturing in China (including a visit to Shenzhen), custom-coded store design, photography, Brand Voice and unboxing experience.",
     am_stat1:"Physical products", am_stat2:"Factory trip, Shenzhen", am_stat3:"Recyclable packaging",
-    am_link1:"ammurahome.com ↗", am_link2:"Request the full case (PDF) ↗",
+    am_authentic:"Real process photos — not stock", am_cap1:"Quality control — piece fresh out of factory production.", am_cap2:"Thank-you card — original design, laser-engraved on bamboo.",
+    am_link1:"Visit the live store ↗", am_link2:"Request the full case (PDF) ↗",
     ev_toolkit:"Toolkit", toolkit_h2:"What I use to take an idea into production.",
     tk_cat1:"Product", tk1_2:"Roadmap & Backlog", tk1_3:"Product Discovery",
     tk_cat2:"Data & Technical", tk2_2:"Data analysis",
@@ -571,6 +622,21 @@ document.querySelectorAll('.lang-switch button').forEach(b=>{
 });
 
 setLang('es');
+
+// Scroll reveal
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+}
 </script>
 
 </body>
