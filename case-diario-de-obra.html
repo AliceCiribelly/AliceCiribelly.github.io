@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rediseñando el diario de obra — Ciribelly Alice</title>
+<meta name="description" content="Case de Product Discovery: rediseño del diario de obra en una plataforma B2B de gestión de obras, de las visitas de campo al prototipo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23191E23'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Arial' font-weight='800' fill='%233E6259' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,600italic&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .back-link{display:inline-flex; align-items:center; gap:6px; padding:22px 0 0; font-family:'IBM Plex Mono'; font-size:12px; color:var(--muted); text-decoration:none;}
+  .back-link:hover{color:var(--ink);}
+
+  .case-hero{padding:20px 0 40px;}
+  .case-hero h1{font-size:36px; font-weight:800; line-height:1.08; max-width:680px; margin-bottom:16px;}
+  @media (max-width:640px){ .case-hero h1{font-size:28px;} }
+  .case-meta{display:flex; gap:14px; flex-wrap:wrap; font-family:'IBM Plex Mono'; font-size:12px; color:var(--muted);}
+  .case-meta span:not(:last-child)::after{content:'·'; margin-left:14px; color:var(--line);}
+
+  .case-body p{font-size:16.5px; color:#3a352c; max-width:640px; margin:0 0 16px;}
+  .case-body p:last-child{margin-bottom:0;}
+  .case-label{font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--warm); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px;}
+
+  /* Phone prototype */
+  .proto-wrap{display:flex; justify-content:center; padding:36px 0 14px;}
+  .phone{
+    width:340px; height:734px; background:var(--ink); border-radius:36px; padding:12px;
+    box-shadow:0 20px 50px rgba(25,30,35,0.25);
+  }
+  .phone-screen{
+    width:100%; height:100%; background:var(--paper); border-radius:26px; overflow:hidden; position:relative;
+  }
+  .screen{position:absolute; inset:0; display:none; flex-direction:column; font-family:'Libre Franklin',sans-serif;}
+  .screen.active{display:flex;}
+
+  .day-cell{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; border-radius:8px; background:var(--white); border:1px solid var(--line); cursor:pointer; font:inherit; margin:0; padding:0; width:100%; height:100%; -webkit-appearance:none; appearance:none; box-sizing:border-box;}
+  .day-cell .num{font-size:12px; font-weight:600; color:var(--ink);}
+  .day-cell .dot{width:5px; height:5px; border-radius:50%;}
+  .day-cell.registered .dot{background:var(--accent);}
+  .day-cell.pending .dot{background:var(--warm);}
+  .day-cell.featured{border:2px solid var(--accent); box-shadow:0 2px 8px rgba(62,98,89,0.18);}
+  .day-off{display:flex; align-items:center; justify-content:center; font-size:12px; color:#B08F6A;}
+
+  .field-card{background:var(--white); border:1px solid var(--line); border-radius:8px; padding:11px 13px;}
+  .field-label{font-family:'IBM Plex Mono'; font-size:9px; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted);}
+  .field-value{font-size:13px; font-weight:600; color:var(--ink); margin-top:2px;}
+
+  .proto-caption{text-align:center; font-family:'IBM Plex Mono'; font-size:11px; color:var(--muted); max-width:420px; margin:0 auto; padding:0 0 8px; line-height:1.6;}
+
+  .pullquote{
+    font-family:'Source Serif 4'; font-style:italic; font-size:22px; line-height:1.5;
+    color:var(--ink); max-width:600px; padding-left:20px; border-left:3px solid var(--accent);
+    margin:8px 0;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo-mark" href="index.html"><span class="dot"></span> AC / PRODUCT</a>
+    <div class="nav-links">
+      <a href="index.html#about">Sobre</a>
+      <a href="index.html#journey">Trayectoria</a>
+      <a href="cases.html" class="current">Casos</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contacto</a>
+    </div>
+    <div></div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <a class="back-link" href="cases.html">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+    Volver a Casos
+  </a>
+
+  <header class="case-hero">
+    <h1>Rediseñando el diario de obra</h1>
+    <div class="case-meta">
+      <span>Construmarket</span>
+      <span>Product Owner</span>
+      <span>2023 — 2024</span>
+    </div>
+  </header>
+</div>
+
+<section class="wrap reveal" style="padding-top:0;">
+  <div class="case-label">Contexto</div>
+  <div class="case-body">
+    <p>En Construmarket trabajé como Product Owner de una plataforma B2B de gestión de obras — un sistema que acompaña el proceso completo, desde la fundación hasta la entrega de la unidad.</p>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="case-label">El problema</div>
+  <div class="case-body">
+    <p>Uno de los módulos más usados por los equipos en campo, el <strong>diario de obra</strong>, tenía baja usabilidad. Los equipos lo completaban porque era obligatorio — no porque funcionara bien para ellos. Eso generaba registros incompletos y fricción diaria.</p>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="case-label">Mi proceso — Product Discovery</div>
+  <div class="case-body">
+    <p>En lugar de asumir la solución desde el escritorio, apliqué <em>customer development</em>: visité obras y entrevisté directamente a maestros de obra e ingenieros para entender la fricción real detrás de la baja adopción.</p>
+    <p>Con esa evidencia cualitativa, prioricé la mejora en el backlog como una de las principales fuentes de fricción reportadas por los equipos en campo.</p>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="case-label">La solución</div>
+  <div class="case-body">
+    <p>Rediseñé la arquitectura de la información del módulo y prototipé rápidamente distintas versiones en Figma — convergiendo en un formato de <strong>calendario</strong> más visual, con controles personalizados pensados para el contexto real de uso: celular en mano, poco tiempo entre tareas.</p>
+  </div>
+
+  <div class="proto-wrap">
+    <div class="phone">
+      <div class="phone-screen">
+
+        <div class="screen active" id="screen-calendar" style="padding:26px 20px 20px;">
+          <div class="mono" style="font-size:10px;letter-spacing:0.06em;color:var(--warm);text-transform:uppercase;">Diario de obra</div>
+          <div style="font-size:18px;font-weight:800;color:var(--ink);margin-top:3px;">Torre Aurora · Bloque B</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;">
+            <div style="font-size:14px;font-weight:700;color:var(--ink);">Marzo 2026</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:12px;">
+            <div class="mono" style="text-align:center;font-size:9px;color:var(--muted);">L</div>
+            <div class="mono" style="text-align:center;font-size:9px;color:var(--muted);">M</div>
+            <div class="mono" style="text-align:center;font-size:9px;color:var(--muted);">X</div>
+            <div class="mono" style="text-align:center;font-size:9px;color:var(--muted);">J</div>
+            <div class="mono" style="text-align:center;font-size:9px;color:var(--muted);">V</div>
+            <div class="mono" style="text-align:center;font-size:9px;color:#B08F6A;">S</div>
+            <div class="mono" style="text-align:center;font-size:9px;color:#B08F6A;">D</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:38px;gap:5px;margin-top:6px;">
+            <div></div><div></div><div></div>
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">1</span><span class="dot"></span></button>
+            <button class="day-cell pending" onclick="showScreen('detail')"><span class="num">2</span><span class="dot"></span></button>
+            <div class="day-off">3</div>
+            <div class="day-off">4</div>
+
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">5</span><span class="dot"></span></button>
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">6</span><span class="dot"></span></button>
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">7</span><span class="dot"></span></button>
+            <button class="day-cell pending" onclick="showScreen('detail')"><span class="num">8</span><span class="dot"></span></button>
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">9</span><span class="dot"></span></button>
+            <div class="day-off">10</div>
+            <div class="day-off">11</div>
+
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">12</span><span class="dot"></span></button>
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">13</span><span class="dot"></span></button>
+            <button class="day-cell registered featured" onclick="showScreen('detail')"><span class="num">14</span><span class="dot"></span></button>
+            <button class="day-cell pending" onclick="showScreen('detail')"><span class="num">15</span><span class="dot"></span></button>
+            <button class="day-cell registered" onclick="showScreen('detail')"><span class="num">16</span><span class="dot"></span></button>
+            <div class="day-off">17</div>
+            <div class="day-off">18</div>
+          </div>
+          <div style="display:flex;gap:14px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);">
+            <div class="mono" style="font-size:9px;color:var(--muted);display:flex;align-items:center;gap:4px;"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block;"></span>Registrado</div>
+            <div class="mono" style="font-size:9px;color:var(--muted);display:flex;align-items:center;gap:4px;"><span style="width:5px;height:5px;border-radius:50%;background:var(--warm);display:inline-block;"></span>Pendiente</div>
+          </div>
+        </div>
+
+        <div class="screen" id="screen-detail" style="padding:22px 20px 20px;">
+          <button onclick="showScreen('calendar')" style="all:unset; display:inline-flex; align-items:center; gap:5px; cursor:pointer;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+            <span class="mono" style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;">Calendario</span>
+          </button>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;">
+            <div>
+              <div style="font-size:18px;font-weight:800;color:var(--ink);">14 de marzo</div>
+              <div class="mono" style="font-size:9.5px;color:var(--warm);margin-top:1px;">Torre Aurora · Bloque B</div>
+            </div>
+            <div class="mono" style="font-size:9px;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:4px 9px;border-radius:12px;">Registrado</div>
+          </div>
+          <div style="display:flex;gap:6px;margin-top:14px;">
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 0;border-radius:7px;background:var(--ink);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--warm-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2"></path></svg>
+              <span class="mono" style="font-size:10px;font-weight:600;color:var(--white);">Mañana</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 0;border-radius:7px;background:var(--white);border:1px solid var(--line);">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"></path></svg>
+              <span class="mono" style="font-size:10px;font-weight:600;color:var(--muted);">Tarde</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
+            <div style="display:flex;gap:8px;">
+              <div class="field-card" style="flex:1;"><div class="field-label">Clima</div><div class="field-value">Despejado</div></div>
+              <div class="field-card" style="flex:1;"><div class="field-label">Concreto vertido</div><div class="field-value">32 m³</div></div>
+            </div>
+            <div class="field-card"><div class="field-label">Mano de obra</div><div class="field-value">18 propios · 6 subcontratados</div></div>
+            <div class="field-card"><div class="field-label">Equipamientos</div><div class="field-value">Grúa torre · Vibrador de concreto</div></div>
+            <div class="field-card">
+              <div class="field-label">Ocurrencias</div>
+              <div style="font-size:11.5px;color:#3D4235;margin-top:3px;line-height:1.5;">Retraso de 40 min en la entrega de concreto. Sin impacto en el cronograma.</div>
+            </div>
+            <div>
+              <div class="field-label" style="margin-bottom:5px;">Fotos</div>
+              <div style="display:flex;gap:6px;">
+                <div style="width:48px;height:48px;border-radius:5px;background:var(--accent-light);"></div>
+                <div style="width:48px;height:48px;border-radius:5px;background:var(--warm-light);"></div>
+                <div style="width:48px;height:48px;border-radius:5px;background:var(--paper-2);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <p class="proto-caption">Prototipo interactivo — tocá un día para ver el detalle. Recreación ilustrativa: los datos y la interfaz original de la empresa no se muestran por confidencialidad.</p>
+</section>
+
+<section class="wrap reveal">
+  <div class="case-label">Herramientas</div>
+  <div class="tool-tags">
+    <span class="tool-tag">Customer Development</span><span class="tool-tag">Figma</span><span class="tool-tag">Azure DevOps</span><span class="tool-tag">Notion</span><span class="tool-tag">Arquitectura de la información</span>
+  </div>
+</section>
+
+<section class="wrap reveal">
+  <div class="case-label">Aprendizaje</div>
+  <p class="pullquote">El mejor Product Discovery no pasa solo por analytics — pasa por estar presente donde el usuario realmente trabaja.</p>
+</section>
+
+<footer class="wrap" id="contact">
+  <div class="contact-box">
+    <div>
+      <h2>Hablemos.</h2>
+      <p>Abierta a posiciones de Product Owner, Business Analyst e Implementation en Madrid.</p>
+    </div>
+    <a href="mailto:alice.ciribellys@gmail.com" class="btn btn-primary" style="background:var(--white); color:var(--ink);">alice.ciribellys@gmail.com</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Ciribelly Alice</span>
+    <span>Diseñado y desarrollado a mano · Madrid</span>
+  </div>
+</footer>
+
+<script>
+function showScreen(which){
+  document.getElementById('screen-calendar').classList.toggle('active', which==='calendar');
+  document.getElementById('screen-detail').classList.toggle('active', which==='detail');
+}
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+}
+</script>
+
+</body>
+</html>

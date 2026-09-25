@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alice Ciribelly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #22261F;
+    --paper: #ECE4CF;
+    --line: #C9BD98;
+    --line-soft: #DCD2AE;
+    --muted: #7A6F4E;
+    --body-text: #3D4235;
+    --body-text2: #4E5340;
+    --green: #3E6350;
+    --green-text: #F6F1E3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    font-family: 'Libre Franklin', sans-serif;
+    color: var(--body-text);
+  }
+  a { text-decoration: none; }
+  .wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .col {
+    width: 100%;
+    max-width: 560px;
+    padding: 56px 28px 48px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  h1 {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  .lede {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--body-text);
+    max-width: 46ch;
+  }
+  .rule { height: 1px; background: var(--line); }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .service {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .service:last-child { border-bottom: none; padding-bottom: 0; }
+  .service-title { font-size: 17px; font-weight: 600; color: var(--ink); }
+  .service-desc { font-size: 15px; line-height: 1.5; color: var(--body-text2); }
+  .about-text { margin: 0; font-size: 15px; line-height: 1.65; }
+  .contact { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 54px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: opacity 0.15s ease;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn:active { opacity: 0.7; }
+  .btn-primary { background: var(--green); color: var(--green-text); }
+  .btn-outline { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
+  .footer-note { font-size: 13px; color: var(--muted); text-align: center; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="col">
+
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div class="eyebrow">MADRID, ESPAÑA</div>
+      <h1>Alice<br>Ciribelly</h1>
+      <p class="lede">Atención al cliente, hostelería y gestión de tiendas online. Portugués nativo, español avanzado — disponibilidad inmediata.</p>
+    </div>
+
+    <div class="rule"></div>
+
+    <div style="display: flex; flex-direction: column; gap: 22px;">
+      <div class="section-title">En qué puedo ayudarte</div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="service">
+          <div class="service-title">Atención al cliente</div>
+          <div class="service-desc">Atención por teléfono, email o en persona. Comunicación clara, empatía y resolución rápida de incidencias.</div>
+        </div>
+        <div class="service">
+          <div class="service-title">Montar tu tienda online</div>
+          <div class="service-desc">Configuro tu tienda en Shopify: catálogo, pagos, envíos y diseño, lista para vender.</div>
+        </div>
+        <div class="service">
+          <div class="service-title">Vender en Amazon</div>
+          <div class="service-desc">Doy de alta tus productos, gestiono FBA y mejoro tus fichas para vender más.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule"></div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="section-title">Sobre mí</div>
+      <p class="about-text">Soy brasileña y vivo en Madrid desde hace casi tres años. Tengo más de 4 años de experiencia en atención al cliente y soporte, y también monté mi propia tienda online de principio a fin: desde la búsqueda de proveedores hasta la web y la logística. Hablo portugués nativo, español avanzado e inglés.</p>
+    </div>
+
+    <div class="contact">
+      <a class="btn btn-primary" href="https://wa.me/34660798278?text=Hola%20Alice%2C%20vi%20tu%20perfil%20y%20me%20gustar%C3%ADa%20hablar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6F1E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Escribir por WhatsApp
+      </a>
+      <a class="btn btn-outline" href="mailto:alice.ciribellys@gmail.com">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22261F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
+        Enviar un email
+      </a>
+    </div>
+
+    <div class="footer-note">Disponibilidad inmediata</div>
+
+  </div>
+</div>
+</body>
+</html>

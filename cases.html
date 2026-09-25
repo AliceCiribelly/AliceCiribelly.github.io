@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casos — Ciribelly Alice</title>
+<meta name="description" content="Casos de producto: del descubrimiento en campo al prototipo, y de la idea a una marca de e-commerce real.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23191E23'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Arial' font-weight='800' fill='%233E6259' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,600italic&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .cases-hero{padding:56px 0 8px;}
+  .cases-hero h1{font-size:38px; font-weight:800; margin-bottom:14px;}
+  @media (max-width:640px){ .cases-hero h1{font-size:30px;} }
+  .cases-hero p{font-size:17px; color:#3a352c; max-width:520px; margin:0;}
+
+  .cases-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; padding:40px 0 64px;}
+  @media (max-width:760px){ .cases-grid{grid-template-columns:1fr;} }
+
+  .case-cover{display:flex; flex-direction:column; border-radius:6px; overflow:hidden; border:1px solid var(--line); background:var(--white); text-decoration:none; color:inherit; transition:transform 0.2s ease, box-shadow 0.2s ease;}
+  .case-cover:hover{transform:translateY(-4px); box-shadow:0 14px 34px rgba(25,30,35,0.14);}
+
+  .case-cover-visual{height:260px; position:relative; overflow:hidden;}
+  .cv-obra{background:var(--ink); display:flex; flex-direction:column; justify-content:space-between; padding:24px;}
+  .cv-obra .grid-pattern{position:absolute; inset:0; opacity:0.5; background-image:radial-gradient(circle, rgba(255,255,255,0.08) 1.5px, transparent 1.5px); background-size:20px 20px;}
+  .cv-obra-top{position:relative; display:flex; justify-content:space-between; align-items:flex-start;}
+  .cv-obra-num{position:relative; font-family:'Libre Franklin'; font-weight:800; font-size:96px; line-height:0.85; color:var(--white);}
+  .cv-obra-month{font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#9FB8AE;}
+
+  .cv-ammura{background-size:cover; background-position:center;}
+  .cv-ammura-overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(25,30,35,0) 40%, rgba(25,30,35,0.75) 100%);}
+  .cv-ammura-label{position:absolute; bottom:18px; left:22px; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.1em; text-transform:lowercase; color:#DEE7E2;}
+
+  .case-cover-body{padding:26px 28px 28px;}
+  .case-cover-eyebrow{font-family:'IBM Plex Mono'; font-size:11px; color:var(--warm); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px;}
+  .case-cover-title{font-size:22px; font-weight:800; margin-bottom:8px;}
+  .case-cover-tagline{font-family:'Source Serif 4'; font-style:italic; color:#4a453b; font-size:15px; margin-bottom:16px;}
+  .case-cover-cta{font-family:'IBM Plex Mono'; font-size:12px; font-weight:600; color:var(--ink);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo-mark" href="index.html"><span class="dot"></span> AC / PRODUCT</a>
+    <div class="nav-links">
+      <a href="index.html#about">Sobre</a>
+      <a href="index.html#journey">Trayectoria</a>
+      <a href="cases.html" class="current">Casos</a>
+      <a href="index.html#toolkit">Toolkit</a>
+      <a href="index.html#contact">Contacto</a>
+    </div>
+    <div></div>
+  </div>
+</nav>
+
+<header class="wrap cases-hero">
+  <h1>Casos.</h1>
+  <p>Dos proyectos, dos contextos: del descubrimiento en campo a un prototipo, y de una idea a una marca de e-commerce real, de principio a fin.</p>
+</header>
+
+<div class="wrap cases-grid">
+
+  <a class="case-cover reveal" href="case-diario-de-obra.html">
+    <div class="case-cover-visual cv-obra">
+      <div class="grid-pattern"></div>
+      <div class="cv-obra-top">
+        <div class="cv-obra-month">Diario de obra</div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F1E3CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+      </div>
+      <div class="cv-obra-num">14</div>
+    </div>
+    <div class="case-cover-body">
+      <div class="case-cover-eyebrow">Product Owner · Construmarket</div>
+      <div class="case-cover-title">Rediseñando el diario de obra</div>
+      <div class="case-cover-tagline">De las quejas en campo a un prototipo probado con maestros de obra.</div>
+      <div class="case-cover-cta">Ver caso →</div>
+    </div>
+  </a>
+
+  <a class="case-cover reveal" href="case-ammura.html">
+    <div class="case-cover-visual cv-ammura" style="background-image:url('assets/ammura_hero.png');">
+      <div class="cv-ammura-overlay"></div>
+      <div class="cv-ammura-label">ammura home</div>
+    </div>
+    <div class="case-cover-body">
+      <div class="case-cover-eyebrow">Co-fundadora · Ammura</div>
+      <div class="case-cover-title">De la idea a la tienda</div>
+      <div class="case-cover-tagline">Construir una marca de e-commerce de bambú, de la fábrica al lanzamiento.</div>
+      <div class="case-cover-cta">Ver caso →</div>
+    </div>
+  </a>
+
+</div>
+
+<footer class="wrap" id="contact">
+  <div class="contact-box">
+    <div>
+      <h2>Hablemos.</h2>
+      <p>Abierta a posiciones de Product Owner, Business Analyst e Implementation en Madrid.</p>
+    </div>
+    <a href="mailto:alice.ciribellys@gmail.com" class="btn btn-primary" style="background:var(--white); color:var(--ink);">alice.ciribellys@gmail.com</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Ciribelly Alice</span>
+    <span>Diseñado y desarrollado a mano · Madrid</span>
+  </div>
+</footer>
+
+<script>
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
+}
+</script>
+
+</body>
+</html>
